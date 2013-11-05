@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        xmlns:zcml="http://namespaces.zope.org/zcml">
+        <configure zcml:condition="installed Products.Zuul">
+
+            <include package="Products.ZenUtils.extdirect.zope" file="meta.zcml"/>
+
+
+            <!-- ZenPack Info -->
+
+            <browser:directRouter
+                name="NetScreenDevice_router"
+                for="*"
+                class="ZenPacks.community.NetScreenDevice.routers.NetScreenDeviceRouter"
+                namespace="Zenoss.remote"
+                permission="zenoss.View"
+            />
+    
+            <adapter
+                name="NetScreenDeviceAdapter"
+                provides="ZenPacks.community.NetScreenDevice.interfaces.INetScreenDeviceFacade"
+                for="*"
+                factory="ZenPacks.community.NetScreenDevice.facades.NetScreenDeviceFacade"
+            />
+                
+            <browser:resourceDirectory
+                    name="NetScreenDevice"
+                    directory="resources"
+            />
+
+            <!-- Component Info -->
+            <adapter factory="ZenPacks.community.NetScreenDevice.info.NetScreenTunnelInfo"
+                for="ZenPacks.community.NetScreenDevice.NetScreenTunnel.NetScreenTunnel"
+                provides="ZenPacks.community.NetScreenDevice.interfaces.INetScreenTunnelInfo"
+            />
+    
+            <browser:viewlet
+                name="js-NetScreenTunnel"
+                paths="/++resource++NetScreenDevice/netscreentunnel.js"
+                weight="10"
+                manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+                class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+                permission="zope2.Public"
+            />
+
+            <utility provides="zope.schema.interfaces.IVocabularyFactory"
+                component=".info.NetScreenTunnelgetEventClassesVocabulary"
+                name="NetScreenTunnelgetEventClasses"
+            />
+
+        </configure>
+    </configure>
+
