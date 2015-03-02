@@ -2,6 +2,12 @@
 <objects>
 <!-- ('', 'zport', 'dmd', 'Devices', 'Network', 'NetScreen') -->
 <object id='/zport/dmd/Devices/Network/NetScreen' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property visible="True" type="string" id="zPythonClass" >
+ZenPacks.community.NetScreenDevice.NetScreenDevice
+</property>
+<property visible="True" type="string" id="zPDServiceKey" >
+RsNetworkServiceKey
+</property>
 <property visible="True" type="lines" id="zCollectorPlugins" >
 ['zenoss.snmp.NewDeviceMap', 'zenoss.snmp.DeviceMap', 'zenoss.snmp.InterfaceMap', 'zenoss.snmp.RouteMap', 'NetScreenTunnelMap', 'NetScreenDeviceMap']
 </property>

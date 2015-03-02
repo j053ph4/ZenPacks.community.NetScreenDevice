@@ -3,6 +3,12 @@ from Products.DataCollector.plugins.DataMaps import ObjectMap
 from ZenPacks.community.NetScreenDevice.Definition import *
 import re
 
+__doc__ = """NetScreenTunnelMap
+
+NetScreenTunnelMap detects Netscreen Tunnels
+
+"""
+
 class NetScreenTunnelMap(SnmpPlugin):
     ''''''
     compname = "os"

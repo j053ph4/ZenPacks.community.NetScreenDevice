@@ -2,7 +2,7 @@ from ZenPacks.community.ConstructionKit.BasicDefinition import *
 from ZenPacks.community.ConstructionKit.Construct import *
 
 NetScreenDefinition = type('NetScreenDefinition', (BasicDefinition,), {
-        'version' : Version(1, 1, 0),
+        'version' : Version(1, 1, 1),
         'zenpackbase': "NetScreenDevice",
         'component' : 'NetScreenTunnel',
         'componentData' : {
@@ -18,6 +18,7 @@ NetScreenDefinition = type('NetScreenDefinition', (BasicDefinition,), {
                                         'p1p2' : addProperty('P1P2','Basic',optional='false'),
                                         },
                           },
+        'componentMethods' : [],                                                            
         }
 )
 

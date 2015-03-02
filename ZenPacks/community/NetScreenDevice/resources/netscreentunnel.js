@@ -9,7 +9,11 @@
             return ob;
         }
     }
-
+    
+    function pass_link(ob){ 
+        return ob; 
+    }
+    
     ZC.NetScreenTunnelPanel = Ext.extend(ZC.ComponentGridPanel, {
         constructor: function(config) {
             config = Ext.applyIf(config||{}, {
@@ -80,51 +84,58 @@
                         "dataIndex": "name"
                     }, 
                     {
-                        "header": "Algorithm", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Algorithm", 
+                        "renderer": "pass_link", 
                         "id": "algorithm", 
                         "dataIndex": "algorithm"
                     }, 
                     {
-                        "header": "Local Gateway", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Local Gateway", 
+                        "renderer": "pass_link", 
                         "id": "localGateway", 
                         "dataIndex": "localGateway"
                     }, 
                     {
-                        "header": "P1P2", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "P1P2", 
+                        "renderer": "pass_link", 
                         "id": "p1p2", 
                         "dataIndex": "p1p2"
                     }, 
                     {
-                        "header": "Remote Gateway", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Remote Gateway", 
+                        "renderer": "pass_link", 
                         "id": "remoteGateway", 
                         "dataIndex": "remoteGateway"
                     }, 
                     {
-                        "header": "Name", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Name", 
+                        "renderer": "pass_link", 
                         "id": "tunnelName", 
                         "dataIndex": "tunnelName"
                     }, 
                     {
-                        "header": "Type", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Type", 
+                        "renderer": "pass_link", 
                         "id": "type", 
                         "dataIndex": "type"
                     }, 
                     {
-                        "header": "Virtual System", 
-                        "width": 120, 
                         "sortable": "true", 
+                        "width": 120, 
+                        "header": "Virtual System", 
+                        "renderer": "pass_link", 
                         "id": "virtualSystem", 
                         "dataIndex": "virtualSystem"
                     }, 
